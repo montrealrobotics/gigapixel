@@ -1,0 +1,5 @@
+description: Work by <a href="https://rluke22.github.io/">Luke Rowe</a>, <a href="https://mila.quebec/en/person/roger-girgis/">Roger Girgis</a>, <a href="https://rdesc.dev/">Rodrigue de Schaetzen</a>, <a href="https://www.daphne-cornelisse.com/">Daphne Cornelisse<a/>, <a href="https://www.linkedin.com/in/alaap-grandhi/">Alaap Grandhi<a/>, <a href="https://www.cs.princeton.edu/~fheide/">Felix Heide<a/>, <a href="https://www.eugenevinitsky.com/">Eugene Vinitsky<a/>, <a href="https://sites.google.com/view/christopher-pal">Christopher Pal</a>, <a href="https://liampaull.ca/">Liam Paull</a><br><br>
+theme: jekyll-theme-cayman
+links:
+  arxiv: 
+  code: https://github.com/montrealrobotics/gigapixel
