@@ -1,5 +1,12 @@
-description: Work by <a href="https://rluke22.github.io/">Luke Rowe</a>, <a href="https://mila.quebec/en/person/roger-girgis/">Roger Girgis</a>, <a href="https://rdesc.dev/">Rodrigue de Schaetzen</a>, <a href="https://www.daphne-cornelisse.com/">Daphne Cornelisse<a/>, <a href="https://www.linkedin.com/in/alaap-grandhi/">Alaap Grandhi<a/>, <a href="https://www.cs.princeton.edu/~fheide/">Felix Heide<a/>, <a href="https://www.eugenevinitsky.com/">Eugene Vinitsky<a/>, <a href="https://sites.google.com/view/christopher-pal">Christopher Pal</a>, <a href="https://liampaull.ca/">Liam Paull</a><br><br>
+title: Scaling Self-Play for End-to-End Driving
+tagline: Gigapixel · Self-Play from Pixels
+description: >-
+  Gigapixel is a high-throughput batched driving simulator with perspective rendering
+  that enables large-scale self-play directly from pixels, training robust end-to-end
+  autonomous driving policies that transfer to real-world sensor data.
+lang: en-US
 theme: jekyll-theme-cayman
+
 links:
-  arxiv: 
+  arxiv:
   code: https://github.com/montrealrobotics/gigapixel

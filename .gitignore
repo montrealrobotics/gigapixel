@@ -1,0 +1,9 @@
+# Jekyll build output & caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# OS cruft
+.DS_Store
+**/.DS_Store
