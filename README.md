@@ -19,7 +19,9 @@
 Gigapixel is a high-throughput batched driving simulator with perspective rendering that enables large-scale self-play directly from pixels, training robust end-to-end autonomous driving policies that transfer to real-world sensor data.
 
 <!-- Tip: GitHub renders inline videos most reliably from drag-and-dropped uploads. To get an autoplaying inline player, edit this README on GitHub, drag assets/world_0013.mp4 into the editor, and replace the src below with the generated user-attachments URL. -->
-<video src="assets/world_0013.mp4" width="720"></video>
+<video src="https://github.com/user-attachments/assets/5c6521a7-1d36-475e-a6c7-6c7ac3162560" width="360"></video>
+
+
 
 Table of Contents
 =================
