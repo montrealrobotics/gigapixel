@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Jekyll / project-page build artifacts (the website lives on the github_pages branch)
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Notebooks & experiment logs
+.ipynb_checkpoints/
+wandb/
+
+# Misc
+*.log
