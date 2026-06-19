@@ -27,11 +27,11 @@ layout: default
 
     <figure class="media media--pad fig fig--wide reveal">
       <img src="src/system_figure.png" alt="Three-stage self-play training pipeline: vectorized teacher, pixel-based student via self-play DAgger, and sim-to-real perception adaptation." />
-      <figcaption><b>Overview.</b> <b>(a) Vectorized teacher.</b> A compact policy is trained with self-play reinforcement learning over fast vectorized BEV observations, yielding robust, naturalistic multi-agent driving behavior. <b>(b) Pixel-based student (self-play DAgger).</b> The teacher is distilled into a pixel-based end-to-end policy inside Gigapixel. Every agent in the scene is controlled by the student, and at each visited state a <i>forked</i> parallel simulator rolls out the teacher to generate per-agent trajectory targets. <b>(c) Sim-to-real perception adaptation.</b> To deploy on real sensor observations, we freeze the planning head and finetune only the perception backbone on paired simulated&ndash;real observations, mapping real images into the latent representation the planning head already acts on.</figcaption>
+      <figcaption><b>Overview.</b> <b>(a) Vectorized teacher.</b> A compact policy is trained with self-play reinforcement learning over fast vectorized BEV observations, yielding a robust, naturalistic driving policy. <b>(b) Pixel-based student (self-play DAgger).</b> The teacher is distilled into a pixel-based end-to-end policy inside Gigapixel. Every agent in the scene is controlled by the student, and at each visited state a <i>forked</i> parallel simulator rolls out the teacher to generate per-agent trajectory targets. <b>(c) Sim-to-real perception adaptation.</b> To deploy on real sensor observations, we freeze the planning head and finetune only the perception backbone on paired simulated&ndash;real observations, mapping real images into the latent representation the planning head already acts on.</figcaption>
     </figure>
 
     <div class="callout reveal">
-      <b>Why self-play?</b> Behavior cloning learns from a fixed, narrow distribution of human logs and never sees the consequences of its own actions, so it compounds errors in closed loop. In self-play, agents are paired with copies of themselves and learn through closed-loop interaction &mdash; surfacing safety-critical situations that are vanishingly rare in driving logs, with state coverage that scales directly with compute.
+      <b>Why self-play?</b> Behavior cloning learns from a fixed, narrow distribution of human logs and never sees the consequences of its own actions, so errors compound in closed-loop. In self-play, agents are paired with copies of themselves and learn through closed-loop interaction, which surfaces safety-critical interactions that are vanishingly rare in driving logs, and exposes the policy to the consequences of its own actions during training.
     </div>
   </div>
 </section>
@@ -42,12 +42,12 @@ layout: default
     <div class="titlewrap reveal">
       <span class="eyebrow">Simulator</span>
       <h2>The Gigapixel Renderer</h2>
-      <p>Gigapixel extends the PufferDrive batched simulator with the GPU-accelerated Madrona renderer, exposing ego-centric perspective views rather than only vectorized BEV features. It renders a deliberately simple bounding-box world (vehicles and static objects as cuboids, lane polylines as thin planar strips, and traffic lights as small spheres) preserving the scene geometry and interaction fidelity needed for planning while sustaining <strong>50k agent steps per second on a single GPU, scaling near-linearly with the number of GPUs</strong>.</p>
+      <p style="text-align:justify;hyphens:auto;-webkit-hyphens:auto">Gigapixel extends the PufferDrive batched simulator with the GPU-accelerated Madrona renderer, exposing ego-centric perspective views rather than only vectorized BEV features. It renders a deliberately simple bounding-box world (vehicles and static objects as cuboids, lane polylines as thin planar strips, and traffic lights as small spheres) preserving the scene geometry and interaction fidelity needed for planning while sustaining <strong>50k agent steps per second on a single GPU, scaling near-linearly with the number of GPUs</strong>.</p>
     </div>
 
     <!-- Rollouts -->
     <h3 class="reveal" style="text-align:center;margin-bottom:6px">Gigapixel Rollouts</h3>
-    <p class="muted reveal" style="text-align:center;max-width:720px;margin:0 auto">The ego-centric pixel observations a policy receives during self-play, stitched across the forward camera views. Blue cuboids are surrounding agents, thin strips are lane polylines, and the small colored spheres are traffic lights.</p>
+    <p class="muted reveal" style="text-align:justify;hyphens:auto;-webkit-hyphens:auto;max-width:720px;margin:0 auto">The ego-centric pixel observations a policy receives during self-play, stitched across the forward camera views. Blue cuboids are surrounding agents, thin strips are lane polylines, and the small colored spheres are traffic lights.</p>
     <div class="grid2">
       <div class="rollout reveal">
         <video class="autoplay" muted loop playsinline preload="none" poster="src/gigapixel_rollouts/world_0013.jpg">
@@ -70,7 +70,7 @@ layout: default
       </div>
       <div>
         <h3>Two Rendering Backends</h3>
-        <p>Gigapixel ships both a rasterizer and a ray tracer. The rasterizer is faster, exploiting the simplicity of the primitives; the ray tracer trades throughput for higher visual fidelity, which is visible in the richer shading of the lower rows.</p>
+        <p>Gigapixel supports rasterized and ray-traced rendering. The rasterizer is faster, exploiting the simplicity of the primitives; the ray tracer trades throughput for higher visual fidelity, which is visible in the richer shading of the lower rows.</p>
       </div>
     </div>
 
@@ -99,13 +99,13 @@ layout: default
     <div class="titlewrap reveal">
       <span class="eyebrow">Results</span>
       <h2>Self-Play vs. Behavior Cloning</h2>
-      <p>We compare two pixel-based DrivoR policies driving closed-loop in photorealistic reconstructed real-world scenes. Both share the same architecture; only the training signal differs.</p>
+      <p style="text-align:justify;hyphens:auto;-webkit-hyphens:auto">We compare two pixel-based DrivoR policies driving closed-loop in photorealistic reconstructed real-world scenes. Both share the same architecture; only the training signal differs.</p>
     </div>
 
     <div class="legend reveal">
-      <span><i class="g"></i>Self-Play DAgger (trained in Gigapixel)</span>
-      <span><i class="r"></i>Behavior Cloning (human logs)</span>
-      <span><i class="y"></i>Planned trajectory</span>
+      <span><i class="g"></i>Self-Play Trained (trained in Gigapixel; adapted to real observations)</span>
+      <span><i class="r"></i>BC Trained (human logs)</span>
+      <span><i class="y"></i>Planned Trajectory</span>
     </div>
 
     <div class="cmpgrid">
@@ -116,13 +116,13 @@ layout: default
           <span class="cmp__hint">Same scene &middot; two policies</span>
         </div>
         <div class="cmp__row">
-          <span class="tag tag--good"><span class="d"></span>Self-Play DAgger</span>
+          <span class="tag tag--good"><span class="d"></span>Self-Play Trained</span>
           <video class="autoplay" muted loop playsinline preload="none" poster="src/gigapixel_versus_drivor_{{ i }}/poster_gigapixel.jpg">
             <source src="src/gigapixel_versus_drivor_{{ i }}/web_gigapixel.mp4" type="video/mp4">
           </video>
         </div>
         <div class="cmp__row">
-          <span class="tag tag--bad"><span class="d"></span>Behavior Cloning</span>
+          <span class="tag tag--bad"><span class="d"></span>BC Trained</span>
           <video class="autoplay" muted loop playsinline preload="none" poster="src/gigapixel_versus_drivor_{{ i }}/poster_drivor.jpg">
             <source src="src/gigapixel_versus_drivor_{{ i }}/web_drivor.mp4" type="video/mp4">
           </video>
@@ -132,7 +132,7 @@ layout: default
     </div>
 
     <div class="callout reveal">
-      <b>What to look for.</b> The self-play policy anticipates hazards &mdash; it reduces speed and plans smooth corrective maneuvers (e.g., yielding to a decelerating lead vehicle or steering back from the road edge). The behavior-cloned policy, never exposed to states from its own rollouts, tends to keep a centered, high-velocity straight-ahead plan and fails in the rare safety-critical situations that precede a stop or a recovery &mdash; rear-ending a stopped vehicle or drifting off-road. On HUGSIM we measure an average collision velocity of 1.95 m/s for the self-play policy versus 5.27 m/s for behavior cloning, a 2.7&times; reduction.
+      <b>What to look for.</b> The self-play policy anticipates hazards: it reduces speed and plans smooth corrective maneuvers (e.g., yielding to a decelerating lead vehicle or steering back from the road edge). The behavior-cloned policy, never exposed to the consequences of its own actions, tends to keep a centered, high-velocity straight-ahead plan and fails in the rare safety-critical situations that precede a stop or a recovery (rear-ending a stopped vehicle or drifting off-road). On HUGSIM, the average collision velocity of the self-play policy is 1.95 m/s versus 5.27 m/s for behavior cloning, a 2.7&times; reduction.
     </div>
 
     <!-- Sample efficiency -->
@@ -143,7 +143,7 @@ layout: default
         </figure>
       </div>
       <div>
-        <h3>Self-Play DAgger is Far More Sample-Efficient</h3>
+        <h3>Self-Play DAgger is More Sample-Efficient than Self-Play RL</h3>
         <p>Using a lightweight CNN policy (for tractable RL experimentation), we compare distilling a privileged teacher via self-play DAgger against training the pixel policy directly with self-play RL.</p>
         <ul>
           <li>Self-play DAgger surpasses a Gigapixel Driving Score of 60 in roughly <strong>3000&times; fewer steps</strong> than self-play RL.</li>
@@ -165,7 +165,7 @@ layout: default
         <p>Closed-loop performance of the DrivoR-Reg student as training experience scales in Gigapixel, across three end-to-end training strategies.</p>
         <ul>
           <li>Self-play DAgger <strong>improves consistently with scale</strong> and overtakes both single-agent DAgger and behavior cloning beyond 10M steps.</li>
-          <li>Behavior cloning plateaus around 100M steps &mdash; the student is never exposed to states from its own rollouts.</li>
+          <li>Behavior cloning plateaus around 100M steps, as the student is never exposed to consequences of its own actions.</li>
           <li>Self-play's edge comes from two effects: <strong>every</strong> agent in a rollout contributes supervised data, and the co-evolving interactions span more diverse, safety-critical states.</li>
         </ul>
       </div>
@@ -192,7 +192,7 @@ layout: default
   author  = {Rowe, Luke and Girgis, Roger and de Schaetzen, Rodrigue and
              Cornelisse, Daphne and Grandhi, Alaap and Heide, Felix and
              Vinitsky, Eugene and Pal, Christopher and Paull, Liam},
-  journal = {arXiv preprint},
+  journal = {arXiv preprint arXiv:2606.19641},
   year    = {2026}
 }</pre>
     </div>

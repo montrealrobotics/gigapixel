@@ -8,5 +8,5 @@ lang: en-US
 theme: jekyll-theme-cayman
 
 links:
-  arxiv:
+  arxiv: https://arxiv.org/abs/2606.19641
   code: https://github.com/montrealrobotics/gigapixel
