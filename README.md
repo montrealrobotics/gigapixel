@@ -14,6 +14,8 @@
 > CoRL 2026 <br>
 >
 
+All code, data, and models will be released by CoRL 2026. Please see the repository timeline below for more details.
+
 Gigapixel is a high-throughput batched driving simulator with perspective rendering that enables large-scale self-play directly from pixels. We use Gigapixel to train end-to-end driving policies via large-scale self-play directly from pixels; these policies transfer to real-world sensor data through lightweight perception adaptation, without human trajectory supervision.
 
 <!-- Tip: GitHub renders inline videos most reliably from drag-and-dropped uploads. To get an autoplaying inline player, edit this README on GitHub, drag assets/world_0013.mp4 into the editor, and replace the src below with the generated user-attachments URL. -->
@@ -27,7 +29,7 @@ Gigapixel is a high-throughput batched driving simulator with perspective render
 - [ ] [ETA: 11/06/2026] Gigapixel DrivoR/DrivoR-Reg student training and pre-trained checkpoints
 - [ ] [ETA: 11/13/2026] Scoring head training and perception adaptation training
 - [ ] [ETA: 11/13/2026] Gigapixel-DrivoR/DrivoR-Reg perception-adapted checkpoints
-- [ ] [ETA: 11/20/2026] Evaluation on Gigapixel, NAVSIM-v2 navhard, and HUGSIM
+- [ ] [ETA: 11/13/2026] Evaluation on Gigapixel, NAVSIM-v2 navhard, and HUGSIM
 
 Table of Contents
 =================
