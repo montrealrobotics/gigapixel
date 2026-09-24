@@ -11,7 +11,7 @@
 > [Luke Rowe](https://rluke22.github.io)<sup>1,2</sup>, [Roger Girgis](https://mila.quebec/en/person/roger-girgis/)<sup>1,3,4</sup>, [Rodrigue de Schaetzen](https://rdesc.dev/)<sup>1,2,4</sup>, [Daphne Cornelisse](https://www.daphne-cornelisse.com/)<sup>5</sup>, [Alaap Grandhi](https://www.linkedin.com/in/alaap-grandhi/)<sup>1,6</sup>, [Felix Heide](https://www.cs.princeton.edu/~fheide/)<sup>4,7</sup>, [Eugene Vinitsky](https://www.eugenevinitsky.com/)<sup>5</sup>, [Christopher Pal](https://sites.google.com/view/christopher-pal)<sup>1,2,3</sup>, [Liam Paull](https://liampaull.ca/)<sup>1,2</sup>  <br>
 > <sup>1</sup> Mila, <sup>2</sup> Université de Montréal, <sup>3</sup> Polytechnique Montréal, <sup>4</sup> Torc Robotics, <sup>5</sup> NYU Tandon School of Engineering, <sup>6</sup> McMaster University, <sup>7</sup> Princeton University <br>
 > <br>
-> arXiv preprint, 2026 <br>
+> CoRL 2026 <br>
 >
 
 **Code will be released soon.**
