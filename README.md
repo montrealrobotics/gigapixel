@@ -23,10 +23,10 @@ Gigapixel is a high-throughput batched driving simulator with perspective render
 
 ## Repository Timeline
 
-- [ ] [ETA: 11/06/2026] Gigapixel renderer integrated into PufferDrive 2.0
-- [ ] [ETA: 11/06/2026] NuPlan dataset extraction + link to preprocessed NuPlan data
-- [ ] [ETA: 11/06/2026] Gigaflow teacher training and pre-trained checkpoints
-- [ ] [ETA: 11/06/2026] Gigapixel DrivoR/DrivoR-Reg student training and pre-trained checkpoints
+- [ ] [ETA: 11/13/2026] Gigapixel renderer integrated into PufferDrive 2.0
+- [ ] [ETA: 11/13/2026] NuPlan dataset extraction + link to preprocessed NuPlan data
+- [ ] [ETA: 11/13/2026] Gigaflow teacher training and pre-trained checkpoints
+- [ ] [ETA: 11/13/2026] Gigapixel DrivoR/DrivoR-Reg student training and pre-trained checkpoints
 - [ ] [ETA: 11/13/2026] Scoring head training and perception adaptation training
 - [ ] [ETA: 11/13/2026] Gigapixel-DrivoR/DrivoR-Reg perception-adapted checkpoints
 - [ ] [ETA: 11/13/2026] Evaluation on Gigapixel, NAVSIM-v2 navhard, and HUGSIM
